@@ -48,6 +48,8 @@ document.querySelector('#grid').addEventListener('click', function(e) {
 
              }, false)
 
+        }, false)
+        
              window.addEventListener('scroll', function scroll() {
                 if(overlay) {
                     overlay.style.top = window.pageYOffset + 'px';
@@ -56,15 +58,13 @@ document.querySelector('#grid').addEventListener('click', function(e) {
              }, false)
 
              window.addEventListener('resize', function resize() {
-                if(overlay) {
+                if(overlay && preview) {
                     overlay.style.width = window.innerWidth + 'px';
                     overlay.style.height = window.innerHeight + 'px';
                     preview.style.left = (window.innerWidth - preview.width) / 2 + 'px';
                     preview.style.top = (window.innerHeight - preview.height) / 2 + 'px';
                 }
              }, false)
-        }, false)
-        
 
 
     };
