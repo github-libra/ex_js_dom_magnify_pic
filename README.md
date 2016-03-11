@@ -1,2 +1,2 @@
 # ex_js_dom_magnify_pic
-magnify pic 
+[demo](http://github-libra.github.io/ex_js_dom_magnify_pic) 
