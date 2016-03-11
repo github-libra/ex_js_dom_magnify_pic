@@ -18,8 +18,13 @@ document.querySelector('#grid').addEventListener('click', function(e) {
         var preview = document.createElement('IMG');
         preview.src = lowRes.substring(0, lowRes.length - 7) + '.jpg';
 
-        preview.addEventListener('load', function load() {
+        var loading = document.createElement('IMG');
+        loading.src = 'images/loading.gif';
+        loading.style.margin = "200px auto";
+        overlay.appendChild(loading);
 
+        preview.addEventListener('load', function load() {
+            overlay.removeChild(loading);
             //resize pic
             if(this.height > window.innerHeight) {
                 var ratio = window.innerHeight / this.height * 0.8;
@@ -43,8 +48,8 @@ document.querySelector('#grid').addEventListener('click', function(e) {
                 this.removeEventListener('click', remove, false);
                 preview.removeEventListener('load', load, false);
                 document.body.removeChild(overlay);
-                window.removeEventListener('scroll', scroll, false)
-                window.removeEventListener('resize', resize, false)
+                // window.removeEventListener('scroll', scroll, false)
+                // window.removeEventListener('resize', resize, false)
 
              }, false)
 
